@@ -1,2 +1,0 @@
-# dallumnz.github.io
-Startpage
