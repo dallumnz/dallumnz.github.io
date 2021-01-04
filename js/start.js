@@ -1,11 +1,32 @@
-$(function(){
+$(function () {
     'use strict';
 
-    var setTilesAreaSize = function(){
+    const time = document.getElementById('time');
+    const greeting = document.getElementById('greeting');
+    const name = document.getElementById('name');
+
+    function showTime() {
+        let today = new Date(),
+            hour = today.getHours(),
+            min = today.getMinutes(),
+            sec = today.getSeconds();
+        const amPm = hour >= 12 ? 'PM' : 'AM';
+        hour = hour % 12 || 12;
+        time.innerHTML = `${hour}<span>:</span>${addLeadZero(min)}<span>:</span>${addLeadZero(sec)}`;
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+    function addLeadZero(n) {
+        return (parseInt(n, 10) < 10 ? '0' : '') + n;
+    }
+
+    var setTilesAreaSize = function () {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         var groups = $(".tiles-group");
         var tileAreaWidth = 80;
-        $.each(groups, function(){
+        $.each(groups, function () {
             if (width <= Metro.media_sizes.LD) {
                 tileAreaWidth = width;
             } else {
@@ -27,27 +48,27 @@ $(function(){
     setTilesAreaSize();
 
 
-    $.each($('[class*=tile-]'), function(){
+    $.each($('[class*=tile-]'), function () {
         var tile = $(this);
-        setTimeout(function(){
+        setTimeout(function () {
             tile.css({
                 opacity: 1,
                 "transform": "scale(1)",
                 "transition": ".3s"
             }).css("transform", false);
 
-        }, Math.floor(Math.random()*500));
+        }, Math.floor(Math.random() * 500));
     });
 
     $(".tiles-group").animate({
         left: 0
     });
 
-    $(window).on(Metro.events.resize + "-start-screen-resize", function(){
+    $(window).on(Metro.events.resize + "-start-screen-resize", function () {
         setTilesAreaSize();
     });
 
-    $(window).on(Metro.events.mousewheel, function(e){
+    $(window).on(Metro.events.mousewheel, function (e) {
         var up = e.deltaY < 0 ? -1 : 1;
         var scrollStep = 50;
         $(".start-screen")[0].scrollLeft += scrollStep * up;

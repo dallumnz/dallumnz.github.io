@@ -10,6 +10,11 @@
     left: 80px;
     display: none;
   }
+  .start-screen-time {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+  }
   [class*=tile-] {
     -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);
@@ -20,7 +25,7 @@
     margin-top: 50px;
   }
   @media all and (min-width: 768px) {
-    .start-screen-title {
+    .start-screen-title, .start-screen-time {
       display: block;
     }
     .start-screen {

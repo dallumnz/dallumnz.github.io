@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,12 +15,23 @@
     <link href="css/metro-all.min.css" rel="stylesheet">
     <link href="css/start.css" rel="stylesheet">
 
-    <title>Startpage</title>
+    <title>New Page</title>
 </head>
+
 <body class="bg-dark fg-white h-vh-100 m4-cloak">
 
     <div class="container-fluid start-screen h-100" style="overflow: auto;">
-        <h1 class="start-screen-title">Welcome Dallum</h1>
+        <div class="float-left">
+            <h1 class="start-screen-title">
+                <span id="greeting">Welcome</span>
+                <span id="name" contenteditable="true">Dallum</span>
+            </h1>
+        </div>
+        <div class="float-right">
+            <h1 class="start-screen-time">
+                <time id="time">0:0:0</time>
+            </h1>
+        </div>
 
         <div class="tiles-area clear">
             <div class="tiles-grid tiles-group size-2 fg-white" data-group-title="News">
@@ -63,7 +74,8 @@
                 <a href="https://mail.google.com/mail/u/0" data-role="tile" data-size="small">
                     <span class="mif-mail icon"></span>
                 </a>
-                <a href="https://calendar.google.com/calendar/u/0/r" data-role="tile" data-size="small" class="bg-red fg-white">
+                <a href="https://calendar.google.com/calendar/u/0/r" data-role="tile" data-size="small"
+                    class="bg-red fg-white">
                     <span class="mif-calendar icon"></span>
                 </a>
                 <a href="https://github.com/" data-role="tile" data-size="small" class="bg-teal fg-white col-1 row-2">
@@ -82,7 +94,8 @@
             </div>
 
             <div class="tiles-grid tiles-group size-2 fg-white" data-group-title="Misc">
-                <a href="https://www.trademe.co.nz/" data-role="tile" class="bg-lightYellow fg-white" data-cover="img/trademe.jpg">
+                <a href="https://www.trademe.co.nz/" data-role="tile" class="bg-lightYellow fg-white"
+                    data-cover="img/trademe.jpg">
                     <span class="branding-bar">TradeMe</span>
                 </a>
                 <a href="https://www.metservice.com/" data-role="tile" class="bg-lightBlue fg-white">
@@ -99,4 +112,5 @@
     <script src="js/start.js"></script>
 
 </body>
+
 </html>
